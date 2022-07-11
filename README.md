@@ -16,7 +16,7 @@ Show case your React Native skills!
 2. Push, commit many times in the forked repo as you want, but also consider meaningful commit names, time will be counted right after your init commit
 3. Add /firmanserdana as contributors
 4. Update readme as how to use the code and app (will be checked blindly, so ensure pre/post-steps/configuration will also be provided)
-5. Developemt last step/commit => create a merge request into the main branch, add /firmanserdana as the reviewer 
+5. Development last step/commit => create a merge request into the main branch, add /firmanserdana as the reviewer 
 
 ## Marking and Plus Points
 This list is just a guidance, if it's not possible to do the mandatory list, please note it into your readme
