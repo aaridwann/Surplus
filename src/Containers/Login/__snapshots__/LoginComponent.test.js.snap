@@ -1,0 +1,448 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`LoginComponent Snapshot Should render correct layout 1`] = `
+<View
+  style={
+    Object {
+      "alignItems": "center",
+      "height": "100%",
+      "justifyContent": "flex-end",
+      "paddingVertical": 20,
+      "width": "100%",
+    }
+  }
+>
+  <View
+    accessible={true}
+    collapsable={false}
+    focusable={true}
+    onClick={[Function]}
+    onResponderGrant={[Function]}
+    onResponderMove={[Function]}
+    onResponderRelease={[Function]}
+    onResponderTerminate={[Function]}
+    onResponderTerminationRequest={[Function]}
+    onStartShouldSetResponder={[Function]}
+    style={
+      Object {
+        "backgroundColor": "#50b8a8",
+        "opacity": 0.6,
+        "padding": 20,
+        "width": 500,
+        "zIndex": 5,
+      }
+    }
+    testID="loginButton"
+  >
+    <Text
+      style={
+        Object {
+          "color": "white",
+          "fontSize": 40,
+          "opacity": 1,
+          "textAlign": "center",
+        }
+      }
+    >
+      LOGIN
+    </Text>
+  </View>
+  <Modal
+    hardwareAccelerated={false}
+    transparent={true}
+    visible={false}
+  />
+  <View
+    style={
+      Object {
+        "margin": "auto",
+        "position": "absolute",
+        "width": "100%",
+        "zIndex": 0,
+      }
+    }
+  >
+    <View
+      onLayout={[Function]}
+      style={
+        Array [
+          Object {
+            "backgroundColor": "transparent",
+            "flex": 1,
+            "position": "relative",
+          },
+          undefined,
+        ]
+      }
+    >
+      <RCTScrollView
+        automaticallyAdjustContentInsets={false}
+        autoplay={true}
+        autoplayDirection={true}
+        autoplayTimeout={2.5}
+        bounces={false}
+        contentContainerStyle={
+          Array [
+            Object {
+              "backgroundColor": "transparent",
+            },
+            Object {},
+          ]
+        }
+        contentOffset={
+          Object {
+            "x": 0,
+          }
+        }
+        disableNextButton={false}
+        disablePrevButton={false}
+        horizontal={true}
+        index={0}
+        loadMinimal={false}
+        loadMinimalSize={1}
+        loop={true}
+        onIndexChanged={[Function]}
+        onMomentumScrollEnd={[Function]}
+        onScrollBeginDrag={[Function]}
+        onScrollEndDrag={[Function]}
+        pagingEnabled={true}
+        removeClippedSubviews={true}
+        scrollsToTop={false}
+        showsButtons={false}
+        showsHorizontalScrollIndicator={false}
+        showsPagination={true}
+        showsVerticalScrollIndicator={false}
+      >
+        <View>
+          <View
+            style={
+              Array [
+                Object {
+                  "height": 1334,
+                  "width": 750,
+                },
+                Object {
+                  "backgroundColor": "transparent",
+                },
+              ]
+            }
+          >
+            <View
+              style={
+                Object {
+                  "alignItems": "center",
+                  "backgroundColor": "#9DD6EB",
+                  "flex": 1,
+                  "justifyContent": "center",
+                }
+              }
+            >
+              <Text
+                style={
+                  Object {
+                    "color": "#fff",
+                    "fontSize": 30,
+                    "fontWeight": "bold",
+                    "position": "absolute",
+                    "zIndex": 5,
+                  }
+                }
+              >
+                And simple
+              </Text>
+              <Image
+                source={
+                  Object {
+                    "uri": "https://i.pinimg.com/736x/5e/f4/57/5ef45761b37ce9ec46f18ac897ec7993.jpg",
+                  }
+                }
+                style={
+                  Object {
+                    "height": "100%",
+                    "width": "100%",
+                  }
+                }
+              />
+            </View>
+          </View>
+          <View
+            style={
+              Array [
+                Object {
+                  "height": 1334,
+                  "width": 750,
+                },
+                Object {
+                  "backgroundColor": "transparent",
+                },
+              ]
+            }
+          >
+            <View
+              style={
+                Object {
+                  "alignItems": "center",
+                  "backgroundColor": "#9DD6EB",
+                  "flex": 1,
+                  "justifyContent": "center",
+                }
+              }
+            >
+              <Text
+                style={
+                  Object {
+                    "color": "#fff",
+                    "fontSize": 30,
+                    "fontWeight": "bold",
+                    "position": "absolute",
+                    "zIndex": 5,
+                  }
+                }
+              >
+                Hello Surplus
+              </Text>
+              <Image
+                source={
+                  Object {
+                    "uri": "https://i.pinimg.com/564x/4a/da/82/4ada8290e3d2d503da8864637fe3a28c.jpg",
+                  }
+                }
+                style={
+                  Object {
+                    "height": "100%",
+                    "width": "100%",
+                  }
+                }
+              />
+            </View>
+          </View>
+          <View
+            style={
+              Array [
+                Object {
+                  "height": 1334,
+                  "width": 750,
+                },
+                Object {
+                  "backgroundColor": "transparent",
+                },
+              ]
+            }
+          >
+            <View
+              style={
+                Object {
+                  "alignItems": "center",
+                  "backgroundColor": "#9DD6EB",
+                  "flex": 1,
+                  "justifyContent": "center",
+                }
+              }
+            >
+              <Text
+                style={
+                  Object {
+                    "color": "#fff",
+                    "fontSize": 30,
+                    "fontWeight": "bold",
+                    "position": "absolute",
+                    "zIndex": 5,
+                  }
+                }
+              >
+                Beautiful
+              </Text>
+              <Image
+                source={
+                  Object {
+                    "uri": "https://i.pinimg.com/736x/31/89/c7/3189c7c48baac91c58cdb85ae5c366ad.jpg",
+                  }
+                }
+                style={
+                  Object {
+                    "height": "100%",
+                    "width": "100%",
+                  }
+                }
+              />
+            </View>
+          </View>
+          <View
+            style={
+              Array [
+                Object {
+                  "height": 1334,
+                  "width": 750,
+                },
+                Object {
+                  "backgroundColor": "transparent",
+                },
+              ]
+            }
+          >
+            <View
+              style={
+                Object {
+                  "alignItems": "center",
+                  "backgroundColor": "#9DD6EB",
+                  "flex": 1,
+                  "justifyContent": "center",
+                }
+              }
+            >
+              <Text
+                style={
+                  Object {
+                    "color": "#fff",
+                    "fontSize": 30,
+                    "fontWeight": "bold",
+                    "position": "absolute",
+                    "zIndex": 5,
+                  }
+                }
+              >
+                And simple
+              </Text>
+              <Image
+                source={
+                  Object {
+                    "uri": "https://i.pinimg.com/736x/5e/f4/57/5ef45761b37ce9ec46f18ac897ec7993.jpg",
+                  }
+                }
+                style={
+                  Object {
+                    "height": "100%",
+                    "width": "100%",
+                  }
+                }
+              />
+            </View>
+          </View>
+          <View
+            style={
+              Array [
+                Object {
+                  "height": 1334,
+                  "width": 750,
+                },
+                Object {
+                  "backgroundColor": "transparent",
+                },
+              ]
+            }
+          >
+            <View
+              style={
+                Object {
+                  "alignItems": "center",
+                  "backgroundColor": "#9DD6EB",
+                  "flex": 1,
+                  "justifyContent": "center",
+                }
+              }
+            >
+              <Text
+                style={
+                  Object {
+                    "color": "#fff",
+                    "fontSize": 30,
+                    "fontWeight": "bold",
+                    "position": "absolute",
+                    "zIndex": 5,
+                  }
+                }
+              >
+                Hello Surplus
+              </Text>
+              <Image
+                source={
+                  Object {
+                    "uri": "https://i.pinimg.com/564x/4a/da/82/4ada8290e3d2d503da8864637fe3a28c.jpg",
+                  }
+                }
+                style={
+                  Object {
+                    "height": "100%",
+                    "width": "100%",
+                  }
+                }
+              />
+            </View>
+          </View>
+        </View>
+      </RCTScrollView>
+      <View
+        pointerEvents="none"
+        style={
+          Array [
+            Object {
+              "alignItems": "center",
+              "backgroundColor": "transparent",
+              "bottom": 25,
+              "flex": 1,
+              "flexDirection": "row",
+              "justifyContent": "center",
+              "left": 0,
+              "position": "absolute",
+              "right": 0,
+            },
+            undefined,
+          ]
+        }
+      >
+        <View
+          style={
+            Array [
+              Object {
+                "backgroundColor": "#007aff",
+                "borderRadius": 4,
+                "height": 8,
+                "marginBottom": 3,
+                "marginLeft": 3,
+                "marginRight": 3,
+                "marginTop": 3,
+                "width": 8,
+              },
+              undefined,
+            ]
+          }
+        />
+        <View
+          style={
+            Array [
+              Object {
+                "backgroundColor": "rgba(0,0,0,.2)",
+                "borderRadius": 4,
+                "height": 8,
+                "marginBottom": 3,
+                "marginLeft": 3,
+                "marginRight": 3,
+                "marginTop": 3,
+                "width": 8,
+              },
+              undefined,
+            ]
+          }
+        />
+        <View
+          style={
+            Array [
+              Object {
+                "backgroundColor": "rgba(0,0,0,.2)",
+                "borderRadius": 4,
+                "height": 8,
+                "marginBottom": 3,
+                "marginLeft": 3,
+                "marginRight": 3,
+                "marginTop": 3,
+                "width": 8,
+              },
+              undefined,
+            ]
+          }
+        />
+      </View>
+    </View>
+  </View>
+</View>
+`;

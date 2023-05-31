@@ -1,0 +1,337 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`HomeComponent Should snapshot correct layout 1`] = `
+<RCTSafeAreaView
+  emulateUnlessSupported={true}
+  style={
+    Object {
+      "backgroundColor": "white",
+      "color": "gray",
+      "flex": 1,
+    }
+  }
+>
+  <RCTScrollView
+    contentContainerStyle={
+      Object {
+        "alignItems": "center",
+        "width": "100%",
+      }
+    }
+    onScroll={[Function]}
+    showsVerticalScrollIndicator={false}
+  >
+    <View>
+      <View
+        style={
+          Object {
+            "marginTop": 70,
+            "width": "100%",
+          }
+        }
+      >
+        <View
+          style={
+            Object {
+              "backgroundColor": "white",
+              "minHeight": 160,
+              "padding": 16,
+              "paddingVertical": 20,
+              "width": "100%",
+            }
+          }
+          testID="highlight-component"
+        >
+          <Text
+            style={
+              Object {
+                "color": "#50b8a8",
+                "fontSize": 30,
+                "fontWeight": "700",
+              }
+            }
+          >
+            Highlight
+          </Text>
+          <RCTScrollView
+            contentContainerStyle={
+              Object {
+                "marginTop": 10,
+              }
+            }
+            data={
+              Array [
+                Object {
+                  "name": Object {
+                    "first": "John",
+                  },
+                  "picture": Object {
+                    "large": "https://example.com/image1.jpg",
+                    "medium": "https://example.com/image1.jpg",
+                  },
+                },
+                Object {
+                  "name": Object {
+                    "first": "Jane",
+                  },
+                  "picture": Object {
+                    "large": "https://example.com/image2.jpg",
+                    "medium": "https://example.com/image2.jpg",
+                  },
+                },
+              ]
+            }
+            getItem={[Function]}
+            getItemCount={[Function]}
+            horizontal={true}
+            keyExtractor={[Function]}
+            onContentSizeChange={[Function]}
+            onLayout={[Function]}
+            onMomentumScrollBegin={[Function]}
+            onMomentumScrollEnd={[Function]}
+            onScroll={[Function]}
+            onScrollBeginDrag={[Function]}
+            onScrollEndDrag={[Function]}
+            removeClippedSubviews={false}
+            renderItem={[Function]}
+            scrollEventThrottle={50}
+            showsHorizontalScrollIndicator={false}
+            stickyHeaderIndices={Array []}
+            viewabilityConfigCallbackPairs={Array []}
+          >
+            <View>
+              <View
+                onLayout={[Function]}
+                style={
+                  Array [
+                    Object {
+                      "flexDirection": "row",
+                    },
+                    null,
+                  ]
+                }
+              >
+                <View
+                  style={
+                    Object {
+                      "alignItems": "center",
+                      "color": "gray",
+                      "marginHorizontal": 8,
+                    }
+                  }
+                  testID="highlight-item-0"
+                >
+                  <Image
+                    source={
+                      Object {
+                        "uri": "https://example.com/image1.jpg",
+                      }
+                    }
+                    style={
+                      Object {
+                        "backgroundColor": "#50b8a8",
+                        "borderColor": "#50b8a8",
+                        "borderRadius": 50,
+                        "borderWidth": 2.5,
+                        "height": 100,
+                        "width": 100,
+                      }
+                    }
+                    testID="highlight-image-0"
+                  />
+                  <Text
+                    style={
+                      Object {
+                        "color": "#50b8a8",
+                        "fontSize": 30,
+                        "fontWeight": "500",
+                        "marginVertical": 4,
+                      }
+                    }
+                    testID="highlight-text-0"
+                  >
+                    John
+                  </Text>
+                </View>
+              </View>
+              <View
+                onLayout={[Function]}
+                style={
+                  Array [
+                    Object {
+                      "flexDirection": "row",
+                    },
+                    null,
+                  ]
+                }
+              >
+                <View
+                  style={
+                    Object {
+                      "alignItems": "center",
+                      "color": "gray",
+                      "marginHorizontal": 8,
+                    }
+                  }
+                  testID="highlight-item-1"
+                >
+                  <Image
+                    source={
+                      Object {
+                        "uri": "https://example.com/image2.jpg",
+                      }
+                    }
+                    style={
+                      Object {
+                        "backgroundColor": "#50b8a8",
+                        "borderColor": "#50b8a8",
+                        "borderRadius": 50,
+                        "borderWidth": 2.5,
+                        "height": 100,
+                        "width": 100,
+                      }
+                    }
+                    testID="highlight-image-1"
+                  />
+                  <Text
+                    style={
+                      Object {
+                        "color": "#50b8a8",
+                        "fontSize": 30,
+                        "fontWeight": "500",
+                        "marginVertical": 4,
+                      }
+                    }
+                    testID="highlight-text-1"
+                  >
+                    Jane
+                  </Text>
+                </View>
+              </View>
+            </View>
+          </RCTScrollView>
+        </View>
+      </View>
+      <View
+        collapsable={false}
+        forwardedRef={[Function]}
+        style={
+          Object {
+            "marginTop": 20,
+            "transform": Array [
+              Object {
+                "translateY": 100,
+              },
+            ],
+          }
+        }
+      >
+        <View
+          style={
+            Object {
+              "alignItems": "flex-start",
+              "flexDirection": "row",
+              "flexWrap": "wrap",
+              "justifyContent": "center",
+            }
+          }
+          testID="feeds-component"
+        >
+          <View
+            style={
+              Object {
+                "alignItems": "center",
+                "backgroundColor": "#50b8a8",
+                "height": 300,
+                "justifyContent": "center",
+                "margin": 5,
+                "overflow": "hidden",
+                "width": 340,
+              }
+            }
+          >
+            <Image
+              source={
+                Object {
+                  "uri": "https://example.com/image1.jpg",
+                }
+              }
+              style={
+                Object {
+                  "height": "100%",
+                  "margin": 4,
+                  "width": "100%",
+                }
+              }
+            />
+            <Text
+              onPress={[Function]}
+              style={
+                Object {
+                  "alignSelf": "flex-start",
+                  "bottom": 0,
+                  "color": "white",
+                  "fontSize": 60,
+                  "justifyContent": "flex-start",
+                  "margin": 4,
+                  "position": "absolute",
+                  "textTransform": "capitalize",
+                }
+              }
+              testID="feed-name"
+            >
+              John
+            </Text>
+          </View>
+          <View
+            style={
+              Object {
+                "alignItems": "center",
+                "backgroundColor": "#50b8a8",
+                "height": 300,
+                "justifyContent": "center",
+                "margin": 5,
+                "overflow": "hidden",
+                "width": 340,
+              }
+            }
+          >
+            <Image
+              source={
+                Object {
+                  "uri": "https://example.com/image2.jpg",
+                }
+              }
+              style={
+                Object {
+                  "height": "100%",
+                  "margin": 4,
+                  "width": "100%",
+                }
+              }
+            />
+            <Text
+              onPress={[Function]}
+              style={
+                Object {
+                  "alignSelf": "flex-start",
+                  "bottom": 0,
+                  "color": "white",
+                  "fontSize": 60,
+                  "justifyContent": "flex-start",
+                  "margin": 4,
+                  "position": "absolute",
+                  "textTransform": "capitalize",
+                }
+              }
+              testID="feed-name"
+            >
+              Jane
+            </Text>
+          </View>
+        </View>
+      </View>
+    </View>
+  </RCTScrollView>
+</RCTSafeAreaView>
+`;

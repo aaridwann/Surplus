@@ -32,16 +32,4 @@ describe('HighlightComponent', () => {
 		const items = getAllByTestId(/^highlight-item-/);
 		expect(items).toHaveLength(2);
 	});
-
-	// it('should call onPress when an item is pressed', () => {
-	// 	const onPress = jest.fn();
-	// 	const { getByTestId } = render(
-	// 		<HighlightComponent data={data} onPress={onPress} />
-	// 	);
-
-	// 	const item = getByTestId('highlight-item-0');
-	// 	fireEvent.press(item);
-	// 	expect(onPress).toHaveBeenCalledTimes(1);
-	// 	expect(onPress).toHaveBeenCalledWith(data[0]);
-	// });
 });

@@ -102,7 +102,7 @@ const DropdownComponent = ({
 				onFocus={() => setIsFocus(true)}
 				onBlur={() => setIsFocus(false)}
 				onChange={(item) => {
-					setValue(item.value);
+					setValue(item?.value);
 					setIsFocus(false);
 				}}
 				renderLeftIcon={() => (
@@ -192,7 +192,7 @@ export const DropDownCountry = ({ dataCountry, selectValue }) => {
 			placeholder="Select country"
 			searchPlaceholder="Search..."
 			onChange={(e) => {
-				setCountry(e.value);
+				setCountry(e?.value);
 			}}
 		/>
 	);

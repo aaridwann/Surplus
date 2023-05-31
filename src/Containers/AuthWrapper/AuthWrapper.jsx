@@ -4,7 +4,7 @@ import { useSelector } from 'react-redux';
 import LoginContainer from '../Login/Login.Container';
 import { HomeStack } from '../../Navigation/Screens/Screen';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
-import Ionicons from 'react-native-vector-icons/Ionicons';
+import { Ionicons } from '@expo/vector-icons';
 import Constants from '../../Utils/Constants/Constants';
 import ProfileContainer from '../ProfileContainer/ProfileContainer';
 import RegistrationContainer from '../Registration/RegistrationContainer';

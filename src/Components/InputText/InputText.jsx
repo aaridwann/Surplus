@@ -11,6 +11,7 @@ const AnimatedInputWithLabel = ({
 	onChange,
 	validation,
 	password,
+	placeHolder = '',
 }) => {
 	const [isFocused, setIsFocused] = useState(false);
 	const [error, setError] = useState('');
@@ -39,6 +40,7 @@ const AnimatedInputWithLabel = ({
 				secureTextEntry={password}
 				onChangeText={onChange}
 				autoCapitalize="none"
+				placeholder={placeHolder}
 				style={[
 					styles.input,
 					{
@@ -81,6 +83,7 @@ AnimatedInputWithLabel.propTypes = {
 	validation: PropTypes.string,
 	password: PropTypes.bool,
 	value: PropTypes.string,
+	placeHolder: PropTypes.string,
 };
 
 export default AnimatedInputWithLabel;

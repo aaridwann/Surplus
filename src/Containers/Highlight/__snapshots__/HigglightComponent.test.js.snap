@@ -16,7 +16,9 @@ exports[`HighlightComponent should render correctly 1`] = `
   <Text
     style={
       Object {
+        "color": "#50b8a8",
         "fontSize": 30,
+        "fontWeight": "700",
       }
     }
   >
@@ -62,6 +64,7 @@ exports[`HighlightComponent should render correctly 1`] = `
     removeClippedSubviews={false}
     renderItem={[Function]}
     scrollEventThrottle={50}
+    showsHorizontalScrollIndicator={false}
     stickyHeaderIndices={Array []}
     viewabilityConfigCallbackPairs={Array []}
   >
@@ -80,6 +83,8 @@ exports[`HighlightComponent should render correctly 1`] = `
         <View
           style={
             Object {
+              "alignItems": "center",
+              "color": "gray",
               "marginHorizontal": 8,
             }
           }
@@ -94,7 +99,9 @@ exports[`HighlightComponent should render correctly 1`] = `
             style={
               Object {
                 "backgroundColor": "#50b8a8",
+                "borderColor": "#50b8a8",
                 "borderRadius": 50,
+                "borderWidth": 2.5,
                 "height": 100,
                 "width": 100,
               }
@@ -104,7 +111,9 @@ exports[`HighlightComponent should render correctly 1`] = `
           <Text
             style={
               Object {
+                "color": "#50b8a8",
                 "fontSize": 30,
+                "fontWeight": "500",
                 "marginVertical": 4,
               }
             }
@@ -128,6 +137,8 @@ exports[`HighlightComponent should render correctly 1`] = `
         <View
           style={
             Object {
+              "alignItems": "center",
+              "color": "gray",
               "marginHorizontal": 8,
             }
           }
@@ -142,7 +153,9 @@ exports[`HighlightComponent should render correctly 1`] = `
             style={
               Object {
                 "backgroundColor": "#50b8a8",
+                "borderColor": "#50b8a8",
                 "borderRadius": 50,
+                "borderWidth": 2.5,
                 "height": 100,
                 "width": 100,
               }
@@ -152,7 +165,9 @@ exports[`HighlightComponent should render correctly 1`] = `
           <Text
             style={
               Object {
+                "color": "#50b8a8",
                 "fontSize": 30,
+                "fontWeight": "500",
                 "marginVertical": 4,
               }
             }

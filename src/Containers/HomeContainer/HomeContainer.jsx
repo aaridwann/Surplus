@@ -73,7 +73,7 @@ function HomeContainer({ navigation }) {
 	function Search(value) {
 		const data = get(state, 'dataFeeds', []);
 		const res = _.filter(data, (val) => {
-			return val.name.first == value;
+			return val?.name?.first == value;
 		});
 		return res;
 	}

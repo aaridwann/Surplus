@@ -20,16 +20,19 @@ import {
 import HighlightComponent from '../Highlight/HighlightComponent';
 import { get } from 'lodash';
 import FeedsComponent from '../Feeds/Feeds';
-import FilterComponent from '../../Components/FilterComponent/FilterComponent';
+import DropDownContainer from '../../Components/FilterComponent/FilterComponent';
 import { Ionicons } from '@expo/vector-icons';
 import { SimpleLineIcons } from '@expo/vector-icons';
+import * as Animatable from 'react-native-animatable';
 
 const _renderBackground = ({ username }, { Logout }) => {
 	const [showOption, setShowOption] = useState(false);
 	const { IMG } = Constants;
 
 	return (
-		<View
+		<Animatable.View
+			animation={'slideInDown'}
+			duration={1500}
 			style={{
 				width: '100%',
 				backgroundColor: Constants.Colors.LightGreenSurplus,
@@ -98,10 +101,7 @@ const _renderBackground = ({ username }, { Logout }) => {
 						</Text>
 					</TouchableOpacity>
 				)}
-				<TouchableOpacity
-					// style={{backgroundColor:'red'}}
-					onPress={() => setShowOption((prev) => !prev)}
-				>
+				<TouchableOpacity onPress={() => setShowOption((prev) => !prev)}>
 					<Ionicons
 						style={{ marginRight: scaleWidth(15) }}
 						name="ellipsis-vertical"
@@ -110,7 +110,7 @@ const _renderBackground = ({ username }, { Logout }) => {
 					/>
 				</TouchableOpacity>
 			</View>
-		</View>
+		</Animatable.View>
 	);
 };
 const _renderHightLightComponent = (dataHighlight) => (
@@ -119,13 +119,20 @@ const _renderHightLightComponent = (dataHighlight) => (
 	</View>
 );
 const _renderFeedsWrapper = (dataFeeds, go) => (
-	<View style={{ marginTop: scaleHeight(10) }}>
+	<Animatable.View
+		duration={1000}
+		easing={'ease-in'}
+		animation={'slideInUp'}
+		style={{ marginTop: scaleHeight(10) }}
+	>
 		<FeedsComponent data={dataFeeds} onPress={go} />
-	</View>
+	</Animatable.View>
 );
 const _renderSearchWrapper = (animatedProps, search) => (
 	<Animated.View style={animatedProps}>
-		<SearchComponent onChange={(val) => search(val)} />
+		<Animatable.View duration={2500} animation={'slideInRight'}>
+			<SearchComponent onChange={(val) => search(val)} />
+		</Animatable.View>
 	</Animated.View>
 );
 
@@ -145,7 +152,7 @@ const HomeComponent = (Props) => {
 
 	const animatedTopValue = useRef(
 		new Animated.Value(show || screen === 0 ? 80 : -80)
-	).current;
+	)?.current;
 	const handleScroll = (event) => {
 		const { contentOffset, layoutMeasurement, contentSize } = event.nativeEvent;
 		const y = get(contentOffset, 'y', 0);
@@ -173,16 +180,16 @@ const HomeComponent = (Props) => {
 		showsVerticalScrollIndicator: false,
 	};
 	const filterComponentProps = {
-		selectCountry: (e) => method.SelectFilter({ type: 'country', value: e }),
-		selectGender: (e) => method.SelectFilter({ type: 'gender', value: e }),
+		selectCountry: (e) => method?.SelectFilter({ type: 'country', value: e }),
+		selectGender: (e) => method?.SelectFilter({ type: 'gender', value: e }),
 	};
 
 	React.useEffect(() => {
 		Animated.timing(animatedTopValue, {
 			toValue: show || screen === 0 ? 80 : -180,
 			duration: 80,
-			useNativeDriver: true,
-		}).start();
+			useNativeDriver: false,
+		})?.start();
 	}, [show, screen, animatedTopValue]);
 
 	return (
@@ -191,7 +198,7 @@ const HomeComponent = (Props) => {
 			<ScrollView {...scrollProps}>
 				{_renderBackground(state, method)}
 				{_renderHightLightComponent(dataHighlight)}
-				{FilterComponent({ ...filterComponentProps })}
+				{DropDownContainer({ ...filterComponentProps })}
 				{_renderFeedsWrapper(dataFeeds, method.GoToDetails)}
 			</ScrollView>
 		</SafeAreaView>

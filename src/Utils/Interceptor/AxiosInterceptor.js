@@ -11,7 +11,6 @@ AppAxios.interceptors.request.use(
 	},
 	function (error) {
 		// Store.dispatch(SET_NOTIFICATION({ type: 'ERROR', message: 'WOOOOYYY' }));
-		console.log('=====Request JALAN');
 		// Do something with request error
 		return Promise.reject(error);
 	}

@@ -20,14 +20,12 @@ function LoginContainer() {
 	const dispatch = useDispatch();
 	const [state, setState] = React.useState(initialState);
 	const { register } = useSelector((state) => state);
-	console.log('===',{register});
-
 	const ChangeInput = (name, value) => {
 		setState((prev) => ({ ...prev, [name]: value }));
 	};
 
 	const LoginFunction = () => {
-		const find = register.find((val) => val.username === state.username);
+		const find = register.find((val) => val?.username === state?.username);
 		if (!find) {
 			return dispatch(
 				SET_NOTIFICATION({ type: 'ERROR', message: 'Account not found' })
