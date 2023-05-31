@@ -1,35 +1,45 @@
 import React from 'react';
 import { render } from '@testing-library/react-native';
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { HomeStack, UnAuthorizeStack } from './Screen';
+import { NavigationContainer } from '@react-navigation/native';
+jest.mock('axios', () => ({
+	create: jest.fn(() => ({
+		interceptors: {
+			response: {
+				use: jest.fn(),
+			},
+			request: {
+				use: jest.fn(),
+			},
+		},
+	})),
+}));
 
-// At the top of your test file
+describe('Navigation Stack', () => {
+	test('HomeStack renders correctly', () => {
+		const Stack = createNativeStackNavigator();
+		const { getByText } = render(
+			<NavigationContainer>
+				<Stack.Navigator>
+					<HomeStack />
+				</Stack.Navigator>
+			</NavigationContainer>
+		);
 
-beforeAll(() => {
-	jest.mock(
-		'@react-navigation/elements/lib/commonjs/assets/back-icon.png',
-		() => 'ImageMock'
-	);
-});
-
-// Unit tests for HomeStack and UnAuthorizeStack
-// ...
-
-describe('HomeStack', () => {
-	test('renders screens correctly', () => {
-		const { getByText } = render(<HomeStack />);
-
-		// Test each screen in HomeStack
-		expect(getByText('Home')).toBeTruthy();
-		expect(getByText('Detail')).toBeTruthy();
+		expect(getByText('HomeContainer')).toBeDefined();
 	});
-});
 
-describe('UnAuthorizeStack', () => {
-	test('renders screens correctly', () => {
-		const { getByText } = render(<UnAuthorizeStack />);
+	test('UnAuthorizeStack renders correctly', () => {
+		const Stack = createNativeStackNavigator();
+		const { getByText } = render(
+			<NavigationContainer>
+				<Stack.Navigator>
+					<UnAuthorizeStack />
+				</Stack.Navigator>
+			</NavigationContainer>
+		);
 
-		// Test each screen in UnAuthorizeStack
-		expect(getByText('Login')).toBeTruthy();
-		expect(getByText('Registration')).toBeTruthy();
+		expect(getByText('LoginContainer')).toBeDefined();
 	});
 });

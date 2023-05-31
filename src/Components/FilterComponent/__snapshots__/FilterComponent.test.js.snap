@@ -1,0 +1,177 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`DropDownContainer renders correctly 1`] = `
+<View
+  style={
+    Object {
+      "alignItems": "center",
+      "backgroundColor": "transparent",
+      "borderColor": "#50b8a8",
+      "borderWidth": 1,
+      "flexDirection": "row",
+      "justifyContent": "center",
+      "padding": 2,
+      "width": "95%",
+      "zIndex": 2,
+    }
+  }
+>
+  <View
+    style={
+      Object {
+        "backgroundColor": "transparent",
+        "padding": 16,
+      }
+    }
+  >
+    <View
+      onLayout={[Function]}
+      style={
+        Object {
+          "backgroundColor": "transparent",
+          "borderColor": "#50b8a8",
+          "borderRadius": 8,
+          "borderWidth": 0.8,
+          "height": 50,
+          "justifyContent": "center",
+          "paddingHorizontal": 8,
+          "width": 300,
+        }
+      }
+    >
+      <View
+        accessible={false}
+        focusable={true}
+        onClick={[Function]}
+        onResponderGrant={[Function]}
+        onResponderMove={[Function]}
+        onResponderRelease={[Function]}
+        onResponderTerminate={[Function]}
+        onResponderTerminationRequest={[Function]}
+        onStartShouldSetResponder={[Function]}
+        style={
+          Object {
+            "alignItems": "center",
+            "flexDirection": "row",
+            "height": 35,
+            "justifyContent": "space-between",
+          }
+        }
+      >
+        <AntDesign
+          color="black"
+          name="Safety"
+          size={20}
+          style={
+            Object {
+              "color": "#50b8a8",
+              "marginRight": 5,
+            }
+          }
+        />
+        <Text
+          style={
+            Array [
+              Object {
+                "flex": 1,
+                "fontSize": 16,
+                "writingDirection": "ltr",
+              },
+              Object {
+                "color": "#50b8a8",
+                "fontSize": 16,
+              },
+              Object {},
+            ]
+          }
+        >
+          Select item
+        </Text>
+        <Image
+          source={
+            Object {
+              "testUri": "../../react-native-element-dropdown/lib/commonjs/assets/down.png",
+            }
+          }
+          style={
+            Object {
+              "color": "#50b8a8",
+              "height": 20,
+              "tintColor": "gray",
+              "width": 20,
+            }
+          }
+        />
+      </View>
+    </View>
+  </View>
+  <View
+    onLayout={[Function]}
+    style={
+      Object {
+        "borderBottomColor": "#50b8a8",
+        "borderBottomWidth": 0.5,
+        "color": "gray",
+        "height": 50,
+        "justifyContent": "center",
+        "margin": 16,
+        "width": 300,
+      }
+    }
+  >
+    <View
+      accessible={false}
+      focusable={true}
+      onClick={[Function]}
+      onResponderGrant={[Function]}
+      onResponderMove={[Function]}
+      onResponderRelease={[Function]}
+      onResponderTerminate={[Function]}
+      onResponderTerminationRequest={[Function]}
+      onStartShouldSetResponder={[Function]}
+      style={
+        Object {
+          "alignItems": "center",
+          "flexDirection": "row",
+          "height": 35,
+          "justifyContent": "space-between",
+        }
+      }
+    >
+      <Text
+        style={
+          Array [
+            Object {
+              "flex": 1,
+              "fontSize": 16,
+              "writingDirection": "ltr",
+            },
+            Object {
+              "color": "#50b8a8",
+              "fontSize": 16,
+            },
+            Object {},
+          ]
+        }
+      >
+        Select country
+      </Text>
+      <Image
+        source={
+          Object {
+            "testUri": "../../react-native-element-dropdown/lib/commonjs/assets/down.png",
+          }
+        }
+        style={
+          Object {
+            "color": "gray",
+            "height": 20,
+            "tintColor": "gray",
+            "width": 20,
+          }
+        }
+      />
+    </View>
+  </View>
+</View>
+`;

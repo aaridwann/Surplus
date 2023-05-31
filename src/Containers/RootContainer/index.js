@@ -11,17 +11,19 @@ export function RootContainer({ children }) {
 			barStyle={'light-content'}
 			statusBarColor={Constants.Colors.LightGreenSurplus}
 		>
-			<View
-				style={{
-					zIndex: 100,
-					position: 'absolute',
-					width: '100%',
-					backgroundColor: 'red',
-				}}
-			>
-				{ToastComponent()}
-			</View>
-			{children}
+			<React.Fragment>
+				<View
+					style={{
+						zIndex: 100,
+						position: 'absolute',
+						width: '100%',
+						backgroundColor: 'red',
+					}}
+				>
+					{ToastComponent()}
+				</View>
+				{children}
+			</React.Fragment>
 		</ScreenWrapper>
 	);
 }
