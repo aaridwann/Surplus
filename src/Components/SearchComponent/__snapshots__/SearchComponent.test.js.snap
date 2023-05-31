@@ -25,11 +25,13 @@ exports[`SearchComponent snapshot 1`] = `
   testID="search-container"
 >
   <TextInput
+    autoCapitalize={false}
     onChangeText={[MockFunction]}
+    placeholder="Find someone"
     style={
       Object {
-        "borderColor": "gray",
-        "borderRightWidth": 2,
+        "borderColor": "#50b8a8",
+        "borderRightWidth": 1.5,
         "color": "gray",
         "marginHorizontal": 8,
         "padding": 4,

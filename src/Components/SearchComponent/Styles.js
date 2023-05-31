@@ -1,5 +1,6 @@
 import { StyleSheet } from 'react-native';
 import { scaleHeight, scaleWidth } from '../../Utils/Scale/Scale';
+import Constants from '../../Utils/Constants/Constants';
 
 const styles = StyleSheet.create({
 	container: {
@@ -23,8 +24,8 @@ const styles = StyleSheet.create({
 	input: {
 		textAlign: 'center',
 		width: '60%',
-		borderRightWidth: 2,
-		borderColor: 'gray',
+		borderRightWidth: 1.5,
+		borderColor: Constants.Colors.LightGreenSurplus,
 		padding: 4,
 		color: 'gray',
 		marginHorizontal: 8,
