@@ -1,0 +1,65 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`SearchComponent snapshot 1`] = `
+<View
+  style={
+    Object {
+      "alignItems": "center",
+      "backgroundColor": "white",
+      "borderRadius": 10,
+      "elevation": 10,
+      "flexDirection": "row",
+      "height": 80,
+      "justifyContent": "space-evenly",
+      "shadowColor": "#000",
+      "shadowOffset": Object {
+        "height": 5,
+        "width": 0,
+      },
+      "shadowOpacity": 0.34,
+      "shadowRadius": 6.27,
+      "top": -50,
+      "width": 640,
+    }
+  }
+  testID="search-container"
+>
+  <TextInput
+    onChangeText={[MockFunction]}
+    style={
+      Object {
+        "borderColor": "gray",
+        "borderRightWidth": 2,
+        "color": "gray",
+        "marginHorizontal": 8,
+        "padding": 4,
+        "textAlign": "center",
+        "width": "60%",
+      }
+    }
+    testID="search-input"
+  />
+  <View
+    accessible={true}
+    collapsable={false}
+    focusable={true}
+    onClick={[Function]}
+    onResponderGrant={[Function]}
+    onResponderMove={[Function]}
+    onResponderRelease={[Function]}
+    onResponderTerminate={[Function]}
+    onResponderTerminationRequest={[Function]}
+    onStartShouldSetResponder={[Function]}
+    style={
+      Object {
+        "opacity": 1,
+      }
+    }
+    testID="search-button"
+  >
+    <Text>
+      ;
+    </Text>
+  </View>
+</View>
+`;
