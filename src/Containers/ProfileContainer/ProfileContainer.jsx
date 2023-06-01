@@ -5,6 +5,8 @@ import { useSelector } from 'react-redux';
 import { SimpleLineIcons } from '@expo/vector-icons';
 import * as Animatable from 'react-native-animatable';
 import styles from './ProfileContainer.style';
+import { WebView } from 'react-native-webview';
+const URL = 'https://www.surplus.id/';
 
 const _renderGreeting = ({ name }) => (
 	<Animatable.View animation={'slideInDown'} style={styles.greeting}>
@@ -19,29 +21,36 @@ const _renderGreeting = ({ name }) => (
 	</Animatable.View>
 );
 
+const _renderWebView = () => (
+	<WebView style={styles.webView} source={{ uri: URL }} />
+);
+
 function ProfileContainer() {
 	const { auth } = useSelector((state) => state);
 	const { username } = auth;
 
 	return (
-		<View style={styles.container}>
-			<_renderGreeting name={username} />
-			<Animatable.Text
-				delay={10}
-				animation={'slideInRight'}
-				style={styles.title}
-			>
-				Profile Container
-			</Animatable.Text>
+		<>
+			<_renderWebView />
+			<View style={styles.container}>
+				<_renderGreeting name={username} />
+				<Animatable.Text
+					delay={10}
+					animation={'slideInRight'}
+					style={styles.title}
+				>
+					Profile Container
+				</Animatable.Text>
 
-			<Animatable.Text
-				delay={10}
-				animation={'slideInLeft'}
-				style={styles.maintenance}
-			>
-				Is Under Maintenance
-			</Animatable.Text>
-		</View>
+				<Animatable.Text
+					delay={10}
+					animation={'slideInLeft'}
+					style={styles.maintenance}
+				>
+					Is Under Maintenance
+				</Animatable.Text>
+			</View>
+		</>
 	);
 }
 

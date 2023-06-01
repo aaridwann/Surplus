@@ -3,6 +3,12 @@ import { scaleFont } from '../../Utils/Scale/Scale';
 import Constants from '../../Utils/Constants/Constants';
 
 const styles = StyleSheet.create({
+	webView: {
+		flex: 1,
+		zIndex: -1,
+		top: 0,
+		width: '100%',
+	},
 	container: {
 		width: '100%',
 		flex: 1,
