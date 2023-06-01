@@ -1,34 +1,50 @@
 import React, { useRef, useState } from 'react';
 import { Image, Text, TouchableOpacity, View } from 'react-native';
-import AnimatedTextInputWithLabel from '../../Components/InputText/InputText';
-import ButtonComponent from '../../Components/ButtonComponent/ButtonComponent';
 import Swiper from 'react-native-swiper';
-import BottomSheetComponent from '../../Components/BottomSheetComponent/BottomSheetComponent';
 import { AntDesign } from '@expo/vector-icons';
 import { ListBackground } from './LoginConfig';
 import styles from './Login.style';
+import { Suspense } from 'react';
 
-const _renderLogin = ({ ChangeInput, LoginFunction }, onPress) => (
-	<View testID='loginSection' style={styles.wrapperLogin}>
-		<View>
-			<AnimatedTextInputWithLabel
-				onChange={(e) => ChangeInput('username', e)}
-				label="Username"
-			/>
-			<AnimatedTextInputWithLabel
-				onChange={(e) => ChangeInput('password', e)}
-				label="Password"
-				secureTextEntry
-			/>
+//Import Component
+import AnimatedTextInputWithLabel from '../../Components/InputText/InputText';
+import ButtonComponent from '../../Components/ButtonComponent/ButtonComponent';
+import BottomSheetComponent from '../../Components/BottomSheetComponent/BottomSheetComponent';
+
+const _renderLogin = (
+	{ ChangeInput, LoginFunction },
+	onPress,
+	{ username, password }
+) => {
+	const isDisable = !username || !password;
+
+	return (
+		<View testID="loginSection" style={styles.wrapperLogin}>
+			<View>
+				<AnimatedTextInputWithLabel
+					onChange={(e) => ChangeInput('username', e)}
+					label="Username"
+				/>
+				<AnimatedTextInputWithLabel
+					onChange={(e) => ChangeInput('password', e)}
+					label="Password"
+					secureTextEntry
+					password
+				/>
+			</View>
+			<View style={styles.wrapperButtonLogin}>
+				<ButtonComponent
+					disable={isDisable}
+					title={'Login'}
+					onPress={LoginFunction}
+				/>
+				<TouchableOpacity testID="buttonSignUp" onPress={onPress}>
+					<Text style={styles.titleButtonLogin}>No have account ?</Text>
+				</TouchableOpacity>
+			</View>
 		</View>
-		<View style={styles.wrapperButtonLogin}>
-			{ButtonComponent({ title: 'Login', onPress: LoginFunction })}
-			<TouchableOpacity testID='buttonSignUp' onPress={onPress}>
-				<Text style={styles.titleButtonLogin}>No have account ?</Text>
-			</TouchableOpacity>
-		</View>
-	</View>
-);
+	);
+};
 const _renderRegister = ({
 	setRegisterChange,
 	register,
@@ -37,7 +53,8 @@ const _renderRegister = ({
 }) => {
 	const { username, password, confirmationPassword, error } = register;
 	const disableButton =
-		!username || !password || !confirmationPassword || error;
+		!username || !password || !confirmationPassword || error ? true : false;
+
 	const submit = async () => {
 		const submit = await SubmitRegister();
 		if (!submit) return;
@@ -45,7 +62,7 @@ const _renderRegister = ({
 	};
 
 	return (
-		<View testID='registerSection' style={styles.wrapperButtonBack}>
+		<View testID="registerSection" style={styles.wrapperButtonBack}>
 			<TouchableOpacity onPress={() => prev()} style={styles.buttonBack}>
 				<AntDesign
 					style={styles.iconBack}
@@ -79,11 +96,11 @@ const _renderRegister = ({
 					password
 					value={confirmationPassword}
 				/>
-				{ButtonComponent({
-					disable: disableButton,
-					title: 'Register',
-					onPress: submit,
-				})}
+				<ButtonComponent
+					disable={disableButton}
+					title={'Register'}
+					onPress={submit}
+				/>
 			</React.Fragment>
 		</View>
 	);
@@ -100,14 +117,14 @@ const _renderBottomSheet = (show, method, state) => {
 	return (
 		<BottomSheetComponent show={show}>
 			<Swiper
-				testID='swiper'
+				testID="swiper"
 				ref={swiperRef}
 				loop={false}
 				autoplay={false}
 				style={styles.wrapper}
 				showsButtons={false}
 			>
-				{_renderLogin(method, next)}
+				{_renderLogin(method, next, state, show)}
 				<_renderRegister {...method} {...state} prev={goPrev} />
 			</Swiper>
 		</BottomSheetComponent>
@@ -155,11 +172,13 @@ const LoginComponent = (Props) => {
 
 	return (
 		<React.Fragment>
-			<View style={styles.container}>
-				{_renderButton(isShow)}
-				{_renderBottomSheet(show, method, state)}
-				{BackgroundSwiper()}
-			</View>
+			<Suspense fallback={<Text>Loading</Text>}>
+				<View style={styles.container}>
+					{_renderButton(isShow)}
+					{_renderBottomSheet(show, method, state)}
+					{BackgroundSwiper()}
+				</View>
+			</Suspense>
 		</React.Fragment>
 	);
 };

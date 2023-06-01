@@ -4,19 +4,13 @@ import {
 	Image,
 	SafeAreaView,
 	ScrollView,
-	StyleSheet,
 	Text,
 	TouchableOpacity,
 	View,
 } from 'react-native';
 import SearchComponent from '../../Components/SearchComponent/SearchComponent';
 import Constants from '../../Utils/Constants/Constants';
-import {
-	scaleFont,
-	scaleHeight,
-	scaleSize,
-	scaleWidth,
-} from '../../Utils/Scale/Scale';
+import { scaleSize } from '../../Utils/Scale/Scale';
 import HighlightComponent from '../Highlight/HighlightComponent';
 import { get } from 'lodash';
 import FeedsComponent from '../Feeds/Feeds';
@@ -24,6 +18,7 @@ import DropDownContainer from '../../Components/FilterComponent/FilterComponent'
 import { Ionicons } from '@expo/vector-icons';
 import { SimpleLineIcons } from '@expo/vector-icons';
 import * as Animatable from 'react-native-animatable';
+import Styles from './HomeComponent.Style';
 
 const _renderBackground = ({ username }, { Logout }) => {
 	const [showOption, setShowOption] = useState(false);
@@ -33,77 +28,27 @@ const _renderBackground = ({ username }, { Logout }) => {
 		<Animatable.View
 			animation={'slideInDown'}
 			duration={1500}
-			style={{
-				width: '100%',
-				backgroundColor: Constants.Colors.LightGreenSurplus,
-				height: scaleHeight(75),
-				borderBottomEndRadius: 90,
-				alignItems: 'center',
-			}}
+			style={Styles.background.container}
 		>
-			<View
-				style={{
-					position: 'absolute',
-					left: 0,
-					margin: scaleWidth(10),
-					alignItems: 'center',
-					color: 'white',
-					flexDirection: 'row',
-				}}
-			>
+			<View style={Styles.background.leftContentWrapper}>
 				<SimpleLineIcons
-					style={{ margin: scaleWidth(5) }}
+					style={Styles.background.icon}
 					name="diamond"
 					size={scaleSize(18)}
 					color="white"
 				/>
-				<Text
-					style={{
-						textTransform: 'capitalize',
-						color: 'white',
-						fontWeight: '800',
-						fontSize: scaleFont(20),
-					}}
-				>
-					{username}
-				</Text>
+				<Text style={Styles.background.username}>{username}</Text>
 			</View>
-			<Image
-				style={{
-					alignSelf: 'center',
-					width: scaleHeight(50),
-					height: scaleSize(50),
-				}}
-				source={IMG.SURPLUS_LOGO}
-			/>
-			<View
-				style={{
-					position: 'absolute',
-					right: 0,
-					width: scaleWidth(180),
-					height: scaleHeight(40),
-					alignItems: 'center',
-					justifyContent: 'flex-end',
-					flexDirection: 'row',
-				}}
-			>
+			<Image style={Styles.background.img} source={IMG.SURPLUS_LOGO} />
+			<View style={Styles.background.optionWrapper}>
 				{showOption && (
 					<TouchableOpacity onPress={Logout}>
-						<Text
-							style={{
-								backgroundColor: 'white',
-								padding: scaleSize(10),
-								color: 'gray',
-								paddingHorizontal: scaleSize(20),
-							}}
-						>
-							Logout
-						</Text>
+						<Text style={Styles.background.optionsText}>Logout</Text>
 					</TouchableOpacity>
 				)}
 				<TouchableOpacity onPress={() => setShowOption((prev) => !prev)}>
 					<Ionicons
-						style={{ marginRight: scaleWidth(15) }}
+						style={Styles.background.ellipsisIcon}
 						name="ellipsis-vertical"
 						size={scaleSize(24)}
 						color={'white'}
@@ -114,23 +59,23 @@ const _renderBackground = ({ username }, { Logout }) => {
 	);
 };
 const _renderHightLightComponent = (dataHighlight) => (
-	<View style={{ width: '100%', marginTop: scaleHeight(35) }}>
+	<View style={Styles.highlightWrapper}>
 		<HighlightComponent data={dataHighlight} />
 	</View>
 );
 const _renderFeedsWrapper = (dataFeeds, go) => (
 	<Animatable.View
 		duration={1000}
-		easing={'ease-in'}
-		animation={'slideInUp'}
-		style={{ marginTop: scaleHeight(10) }}
+		// easing={'ease-in'}
+		// animation={'slideInUp'}
+		style={Styles.feedsWrapper}
 	>
 		<FeedsComponent data={dataFeeds} onPress={go} />
 	</Animatable.View>
 );
 const _renderSearchWrapper = (animatedProps, search) => (
 	<Animated.View style={animatedProps}>
-		<Animatable.View duration={2500} animation={'slideInRight'}>
+		<Animatable.View duration={1500} animation={'slideInRight'}>
 			<SearchComponent onChange={(val) => search(val)} />
 		</Animatable.View>
 	</Animated.View>
@@ -149,7 +94,6 @@ const HomeComponent = (Props) => {
 	const dataFeeds = useMemo(() => get(state, 'dataFeeds', []), [
 		state.dataFeeds,
 	]);
-
 	const animatedTopValue = useRef(
 		new Animated.Value(show || screen === 0 ? 80 : -80)
 	)?.current;
@@ -171,12 +115,12 @@ const HomeComponent = (Props) => {
 		if (isScrolledToBottom) method.LoadMore();
 	};
 	const animatedProps = [
-		styles.searchContainer,
+		Styles.searchContainer,
 		{ transform: [{ translateY: animatedTopValue }] },
 	];
 	const scrollProps = {
 		onScroll: handleScroll,
-		contentContainerStyle: styles.scrollViewContainer,
+		contentContainerStyle: Styles.scrollViewContainer,
 		showsVerticalScrollIndicator: false,
 	};
 	const filterComponentProps = {
@@ -193,7 +137,7 @@ const HomeComponent = (Props) => {
 	}, [show, screen, animatedTopValue]);
 
 	return (
-		<SafeAreaView style={styles.container}>
+		<SafeAreaView style={Styles.container}>
 			{_renderSearchWrapper(animatedProps, method.Search)}
 			<ScrollView {...scrollProps}>
 				{_renderBackground(state, method)}
@@ -204,30 +148,5 @@ const HomeComponent = (Props) => {
 		</SafeAreaView>
 	);
 };
-
-const styles = StyleSheet.create({
-	container: {
-		backgroundColor: 'white',
-		color: 'gray',
-		flex: 1,
-	},
-	scrollViewContainer: {
-		alignItems: 'center',
-		width: '100%',
-	},
-	title: {
-		marginHorizontal: 10,
-		alignSelf: 'flex-start',
-		position: 'absolute',
-		top: scaleHeight(20),
-	},
-	searchContainer: {
-		zIndex: 2,
-		position: 'absolute',
-		top: 20,
-		width: '100%',
-		alignItems: 'center',
-	},
-});
 
 export default HomeComponent;

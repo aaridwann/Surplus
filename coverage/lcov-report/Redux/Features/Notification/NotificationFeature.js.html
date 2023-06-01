@@ -23,30 +23,30 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">0% </span>
+                <span class="strong">100% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>0/11</span>
+                <span class='fraction'>11/11</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">0% </span>
+                <span class="strong">100% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>0/2</span>
+                <span class='fraction'>2/2</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">0% </span>
+                <span class="strong">100% </span>
                 <span class="quiet">Functions</span>
-                <span class='fraction'>0/2</span>
+                <span class='fraction'>2/2</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">0% </span>
+                <span class="strong">100% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>0/10</span>
+                <span class='fraction'>10/10</span>
             </div>
         
             
@@ -61,7 +61,7 @@
             </div>
         </template>
     </div>
-    <div class='status-line low'></div>
+    <div class='status-line high'></div>
     <pre><table class="coverage">
 <tr><td class="line-count quiet"><a name='L1'></a><a href='#L1'>1</a>
 <a name='L2'></a><a href='#L2'>2</a>
@@ -96,80 +96,71 @@
 <a name='L31'></a><a href='#L31'>31</a>
 <a name='L32'></a><a href='#L32'>32</a>
 <a name='L33'></a><a href='#L33'>33</a>
-<a name='L34'></a><a href='#L34'>34</a>
-<a name='L35'></a><a href='#L35'>35</a>
-<a name='L36'></a><a href='#L36'>36</a>
-<a name='L37'></a><a href='#L37'>37</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<a name='L34'></a><a href='#L34'>34</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">/* eslint-disable import/no-extraneous-dependencies */
-import { createSlice } from '@reduxjs/toolkit';
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import { createSlice } from '@reduxjs/toolkit';
 import { get } from 'lodash';
 &nbsp;
-const initialState = <span class="cstat-no" title="statement not covered" >{</span>
-  isShow: false,
-  type: '',
-  message: '',
+const initialState = {
+	isShow: false,
+	type: '',
+	message: '',
 };
 &nbsp;
-export const typeNotification = <span class="cstat-no" title="statement not covered" >{</span>
-  ERROR: 'ERROR',
-  WARNING: 'WARNING',
-  SUCCESS: 'SUCCESS',
-  INFO: 'INFO',
-};
+export const typeNotification = ['ERROR', 'WARNING', 'SUCCESS', 'INFO'];
 &nbsp;
-export const NotificationSlice = <span class="cstat-no" title="statement not covered" >createSlice({</span>
-  initialState,
-  name: 'auth',
-  reducers: {
-    SET_NOTIFICATION: <span class="fstat-no" title="function not covered" >(s</span>tate, actions) =&gt; {
-      const { payload } = <span class="cstat-no" title="statement not covered" >actions;</span>
-      const type = <span class="cstat-no" title="statement not covered" >get(payload, 'type', 'info');</span>
-      const message = <span class="cstat-no" title="statement not covered" >get(payload, 'message', '');</span>
+export const NotificationSlice = createSlice({
+	initialState,
+	name: 'auth',
+	reducers: {
+		SET_NOTIFICATION: (state, actions) =&gt; {
+			const { payload } = actions;
+			const type = get(payload, 'type', 'info');
+			const message = get(payload, 'message', '');
 &nbsp;
-<span class="cstat-no" title="statement not covered" >      if (!typeNotification.includes(type)) <span class="cstat-no" title="statement not covered" >return initialState;</span></span>
+			if (!typeNotification.includes(type)) return initialState;
 &nbsp;
-<span class="cstat-no" title="statement not covered" >      return { isShow: true, message, type };</span>
-    },
-    RESET_NOTIFICATION: <span class="fstat-no" title="function not covered" >()</span> =&gt; <span class="cstat-no" title="statement not covered" >initialState,</span>
-  },
+			return { isShow: true, message, type };
+		},
+		RESET_NOTIFICATION: () =&gt; initialState,
+	},
 });
 &nbsp;
-export const { SET_NOTIFICATION, RESET_NOTIFICATION } = <span class="cstat-no" title="statement not covered" >NotificationSlice.actions;</span>
+export const {
+	SET_NOTIFICATION,
+	RESET_NOTIFICATION,
+} = NotificationSlice.actions;
 export default NotificationSlice.reducer;
 &nbsp;</pre></td></tr></table></pre>
 
@@ -178,7 +169,7 @@ export default NotificationSlice.reducer;
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2023-05-29T17:42:48.315Z
+                at 2023-06-01T01:52:49.904Z
             </div>
         <script src="../../../prettify.js"></script>
         <script>

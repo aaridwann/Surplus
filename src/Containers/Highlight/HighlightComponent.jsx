@@ -1,42 +1,12 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { FlatList, Image, StyleSheet, Text, View } from 'react-native';
-import { scaleFont, scaleHeight, scaleSize } from '../../Utils/Scale/Scale';
-import Constants from '../../Utils/Constants/Constants';
+import { FlatList, Image, Text, View } from 'react-native';
+import styles from './HighlightComponent.Style';
+import ShimmeringCustom from '../../Components/ShimmeringComponent/ShimmeringComponent';
 
-const styles = StyleSheet.create({
-	container: {
-		minHeight: scaleHeight(80),
-		paddingVertical: scaleSize(10),
-		backgroundColor: 'white',
-		width: '100%',
-		padding: scaleSize(8),
-	},
-	title: {
-		fontSize: scaleSize(15),
-		fontWeight: '700',
-		color: Constants.Colors.LightGreenSurplus,
-	},
-	itemContainer: {
-		marginHorizontal: 8,
-		alignItems: 'center',
-		color: 'gray',
-	},
-	image: {
-		borderWidth: 2.5,
-		borderColor: Constants.Colors.LightGreenSurplus,
-		borderRadius: scaleHeight(50) / 2,
-		backgroundColor: Constants.Colors.LightGreenSurplus,
-		width: scaleHeight(50),
-		height: scaleHeight(50),
-	},
-	text: {
-		fontSize: scaleFont(15),
-		marginVertical: 4,
-		color: Constants.Colors.LightGreenSurplus,
-		fontWeight: '500',
-	},
-});
+// const Shimmer = () => (
+// 	<ShimmeringCustom duration={1500} width={60} height={60} borderRadius={50} />
+// );
 
 const renderItem = ({ item, index }) => (
 	<View testID={`highlight-item-${index}`} style={styles.itemContainer}>
@@ -55,14 +25,22 @@ function HighlightComponent({ data }) {
 	return (
 		<View style={styles.container} testID="highlight-component">
 			<Text style={styles.title}>Highlight</Text>
-			<FlatList
-				contentContainerStyle={{ marginTop: 10 }}
-				horizontal={true}
-				data={data}
-				renderItem={renderItem}
-				keyExtractor={(item, index) => `highlight-item-${index}`}
-				showsHorizontalScrollIndicator={false}
-			/>
+			<ShimmeringCustom
+				duration={1500}
+				width={60}
+				height={60}
+				borderRadius={50}
+				isDone={data.length > 0}
+			>
+				<FlatList
+					contentContainerStyle={{ marginTop: 10 }}
+					horizontal={true}
+					data={data}
+					renderItem={renderItem}
+					keyExtractor={(item, index) => `highlight-item-${index}`}
+					showsHorizontalScrollIndicator={false}
+				/>
+			</ShimmeringCustom>
 		</View>
 	);
 }

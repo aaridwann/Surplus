@@ -1,42 +1,15 @@
 import React from 'react';
 import { Image, Text, View } from 'react-native';
 import PropTypes from 'prop-types';
-import { scaleFont, scaleHeight, scaleWidth } from '../../Utils/Scale/Scale';
-import Constants from '../../Utils/Constants/Constants';
+import styles from './Feeds.Style';
+import ShimmeringCustom from '../../Components/ShimmeringComponent/ShimmeringComponent';
 
 const _renderContent = (value, genap, onPress) => (
-	<View
-		style={{
-			width: scaleWidth(170),
-			height: scaleHeight(genap ? 150 : 100),
-			backgroundColor: Constants.Colors.LightGreenSurplus,
-			margin: 5,
-			alignItems: 'center',
-			justifyContent: 'center',
-			overflow: 'hidden',
-		}}
-	>
-		<Image
-			style={{
-				height: '100%',
-				width: '100%',
-				margin: 4,
-			}}
-			source={{ uri: value?.picture?.large }}
-		/>
-
+	<View style={styles.content.wrapper(genap)}>
+		<Image style={styles.content.img} source={{ uri: value?.picture?.large }} />
 		<Text
 			onPress={() => onPress(value)}
-			style={{
-				color: 'white',
-				margin: 4,
-				textTransform: 'capitalize',
-				fontSize: scaleFont(30),
-				alignSelf: 'flex-start',
-				justifyContent: 'flex-start',
-				position: 'absolute',
-				bottom: 0,
-			}}
+			style={styles.content.title}
 			testID="feed-name"
 		>
 			{value?.name?.first}
@@ -46,25 +19,26 @@ const _renderContent = (value, genap, onPress) => (
 
 function FeedsComponent({ data, onPress }) {
 	return (
-		<View
-			style={{
-				flexDirection: 'row',
-				flexWrap: 'wrap',
-				alignItems: 'flex-start',
-				justifyContent: 'center',
-			}}
-			testID="feeds-component"
-		>
-			{data?.map((value, i) => {
-				// let x = isPrime(i);
-				let x = true;
+		<View style={styles.feedsWrapper} testID="feeds-component">
+			<ShimmeringCustom
+				duration={2000}
+				width={130}
+				height={130}
+				borderRadius={0}
+				isDone={data.length > 0}
+				count={8}
+				style={{ flexWrap:'wrap'}}
+			>
+				{data?.map((value, i) => {
+					let x = true;
 
-				return (
-					<React.Fragment key={i}>
-						{_renderContent(value, x, onPress)}
-					</React.Fragment>
-				);
-			})}
+					return (
+						<React.Fragment key={i}>
+							{_renderContent(value, x, onPress)}
+						</React.Fragment>
+					);
+				})}
+			</ShimmeringCustom>
 		</View>
 	);
 }

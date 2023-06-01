@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
-import { Animated, StyleSheet, Text, TextInput, View } from 'react-native';
-import Constants from '../../Utils/Constants/Constants';
+import { Animated, Text, TextInput, View } from 'react-native';
+import styles from './InputText.Style';
 
 const AnimatedTextInput = Animated.createAnimatedComponent(TextInput);
 
@@ -54,28 +54,6 @@ const AnimatedInputWithLabel = ({
 		</View>
 	);
 };
-
-const styles = StyleSheet.create({
-	container: {
-		marginBottom: 20,
-	},
-	label: {
-		color: Constants.Colors.LightGreenSurplus,
-		fontSize: 16,
-		fontWeight: 'bold',
-		marginBottom: 5,
-	},
-	input: {
-		height: 40,
-		borderWidth: 1,
-		paddingHorizontal: 10,
-		fontSize: 16,
-	},
-	errorText: {
-		color: 'red',
-		marginTop: 5,
-	},
-});
 
 AnimatedInputWithLabel.propTypes = {
 	label: PropTypes.string,

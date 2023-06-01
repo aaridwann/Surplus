@@ -1,16 +1,12 @@
 import React from 'react';
 import { Image, Text, View } from 'react-native';
 import PropTypes from 'prop-types';
-import {
-	scaleFont,
-	scaleHeight,
-	scaleSize,
-	scaleWidth,
-} from '../../Utils/Scale/Scale';
+import { scaleSize } from '../../Utils/Scale/Scale';
 import { AntDesign } from '@expo/vector-icons';
 import { get } from 'lodash';
 import Constants from '../../Utils/Constants/Constants';
 import { LinearGradient } from 'expo-linear-gradient';
+import styles from './DetailsContainer.Style';
 
 const _renderHead = ({ img, name }) => (
 	<LinearGradient
@@ -20,67 +16,25 @@ const _renderHead = ({ img, name }) => (
 			Constants.Colors.LightGreenSurplus,
 			Constants.Colors.ExtraLightGreenSurplus,
 		]}
-		style={{
-			width: '100%',
-			height: scaleHeight(170),
-			alignItems: 'center',
-			justifyContent: 'center',
-			backgroundColor: Constants.Colors.LightGreenSurplus,
-		}}
+		style={styles.headWrapper}
 	>
-		<Image
-			style={{
-				borderWidth: 5,
-				borderColor: 'white',
-				width: 120,
-				height: 120,
-				backgroundColor: 'white',
-				borderRadius: scaleWidth(150) / 2,
-			}}
-			source={{ uri: img }}
-		/>
-		<Text style={{ fontSize: scaleFont(30), color: 'white' }}>{name}</Text>
-		{/* </View> */}
+		<Image style={styles.img} source={{ uri: img }} />
+		<Text style={styles.username}>{name}</Text>
 	</LinearGradient>
 );
 
 const _renderSection = ({ title, desc }) => (
-	<View
-		style={{
-			width: '100%',
-			marginVertical: 10,
-			height: scaleHeight(80),
-			flexDirection: 'row',
-			alignItems: 'center',
-			justifyContent: 'space-between',
-			paddingVertical: scaleHeight(10),
-			borderBottomWidth: 1.2,
-			borderBottomColor: 'gray',
-		}}
-	>
-		<View
-			style={{
-				height: '100%',
-				justifyContent: 'space-between',
-			}}
-		>
-			<Text style={{ fontSize: scaleFont(20) }}>{title}</Text>
-			<Text style={{ fontSize: scaleFont(12) }}>{desc}</Text>
+	<View style={styles.sectionWrapper}>
+		<View style={styles.sectionContainer}>
+			<Text style={styles.title}>{title}</Text>
+			<Text style={styles.desc}>{desc}</Text>
 		</View>
-
 		<AntDesign name="right" size={scaleSize(20)} color="black" />
 	</View>
 );
 
 const _renderContent = (props) => (
-	<View
-		style={{
-			width: '100%',
-			height: '100%',
-			padding: 8,
-			backgroundColor: '#EEEDE7',
-		}}
-	>
+	<View style={styles.content}>
 		<_renderSection title={props.email} desc={'Original Email'} />
 	</View>
 );

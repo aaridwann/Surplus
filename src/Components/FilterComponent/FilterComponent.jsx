@@ -1,28 +1,18 @@
 import React from 'react';
-import Constants from '../../Utils/Constants/Constants';
 import DropdownComponent, {
 	DropDownCountry,
 } from '../DropDownComponent/DropDownComponent';
 import { list_country, list_gender } from './FilterConfig';
 import PropTypes from 'prop-types';
 import * as Animatable from 'react-native-animatable';
+import styles from './FilterComponent.Style';
 
 const DropDownContainer = ({ selectCountry, selectGender }) => (
 	<Animatable.View
 		animation={'slideInLeft'}
-		duration={2000}
+		duration={1200}
 		easing={'ease-in-out'}
-		style={{
-			zIndex: 2,
-			flexDirection: 'row',
-			width: '95%',
-			alignItems: 'center',
-			justifyContent: 'center',
-			padding: 2,
-			backgroundColor: 'transparent',
-			borderWidth: 1,
-			borderColor: Constants.Colors.LightGreenSurplus,
-		}}
+		style={styles}
 	>
 		{DropdownComponent({
 			selectValue: (e) => selectGender(e),
