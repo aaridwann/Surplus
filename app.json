@@ -4,10 +4,10 @@
     "slug": "my-app",
     "version": "1.0.0",
     "orientation": "portrait",
-    "icon": "./assets/surplus.webp",
+    "icon": "./src/Assets/surplus.png",
     "userInterfaceStyle": "light",
     "splash": {
-      "image": "./src/Assets/surplus.webp",
+      "image": "./src/Assets/surplus.png",
       "backgroundColor": "#ffffff"
     },
     "assetBundlePatterns": [
@@ -18,12 +18,18 @@
     },
     "android": {
       "adaptiveIcon": {
-        "foregroundImage": "./assets/surplus.webp",
+        "foregroundImage": "./src/Assets/surplus.png",
         "backgroundColor": "#ffffff"
-      }
+      },
+      "package": "com.aaridwann.myapp"
     },
     "web": {
       "favicon": "./assets/favicon.png"
+    },
+    "extra": {
+      "eas": {
+        "projectId": "bf85d199-bd80-4add-9ccd-a7b48f77d5c4"
+      }
     }
   }
 }
